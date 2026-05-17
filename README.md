@@ -123,3 +123,114 @@ python app.py
 # Linux/Mac
 export AUTO_MODE=1
 python app.py
+```
+
+---
+
+### Funcionalidades Disponibles
+
+| Función | Descripción | Ejemplo de entrada |
+|---|---|---|
+| Buscar por nombre | Retorna información completa de un país | `Chile`, `Germany` |
+| Buscar por código | Búsqueda por código ISO 2 o 3 letras | `cl`, `usa`, `deu` |
+| Buscar por región | Lista países de una región geográfica | `americas`, `europe` |
+| Buscar por idioma | Lista países según idioma oficial | `spanish`, `french` |
+| Buscar por moneda | Lista países que usan una moneda | `clp`, `usd`, `eur` |
+
+### Regiones Válidas
+
+```
+africa | americas | asia | europe | oceania
+```
+
+---
+
+### Ejemplo de Salida
+
+```
+==================================================
+  🌍 GeoOps Intelligence — REST Countries API
+  Base URL : https://restcountries.com/v3.1
+  Timeout  : 10s
+  Modo     : Automático (AUTO_MODE=1)
+==================================================
+
+🔍 Consultando por nombre: 'Chile'...
+
+==================================================
+País:           Chile
+Nombre oficial: Republic of Chile
+Capital:        Santiago
+Región:         Americas
+Subregión:      South America
+Población:      20,206,953
+Área:           756,102.0 km²
+Idiomas:        Spanish
+Monedas:        Chilean peso ($)
+Bandera:        🇨🇱
+Código ISO:     CL
+==================================================
+```
+
+---
+
+## ⚠️ Compatibilidad de Entorno — Jenkins
+
+### Windows (configuración de este repositorio)
+
+Jenkins en Windows no incluye `sh` nativo. El Build Step de `BuildAppJob` está configurado como **Execute Windows batch command**:
+
+```
+C:\Progra~1\Git\bin\bash.exe build.sh
+```
+
+Adicionalmente, Jenkins corre como `SYSTEM` y no tiene acceso directo a Docker Desktop. Se requiere habilitar el daemon TCP en Docker Desktop:
+
+**Docker Desktop → Settings → General → Expose daemon on tcp://localhost:2375**
+
+Y agregar en Jenkins la variable de entorno global:
+
+**Manage Jenkins → System → Global properties → Environment variables**
+
+| Name | Value |
+|---|---|
+| `DOCKER_HOST` | `tcp://localhost:2375` |
+
+---
+
+### Linux (ejecución alternativa)
+
+En un entorno Linux con Jenkins y Docker instalados nativamente, los cambios necesarios son mínimos:
+
+**1. Build Step de `BuildAppJob`:**
+Cambiar de *Execute Windows batch command* a **Execute shell** con:
+
+```bash
+bash build.sh
+```
+
+**2. Variables de entorno:**
+No se requiere configurar `DOCKER_HOST` — Jenkins en Linux accede al socket de Docker directamente en `/var/run/docker.sock`.
+
+Solo asegurarse de que el usuario `jenkins` tenga permisos:
+
+```bash
+sudo usermod -aG docker jenkins
+sudo systemctl restart jenkins
+```
+
+**3. Todo lo demás** (credenciales, pipeline script, jobs) es idéntico en ambos sistemas operativos.
+
+---
+
+### Fuente de Datos
+
+Este proyecto consume la API pública **REST Countries v3.1**:
+- Sitio oficial: [https://restcountries.com](https://restcountries.com)
+- Documentación: [https://restcountries.com/#api-endpoints-v3](https://restcountries.com/#api-endpoints-v3)
+- Sin necesidad de API Key
+- Sin límite de peticiones publicado
+
+---
+
+*Desarrollado como herramienta de consulta operativa para entornos de TI distribuidos.*
