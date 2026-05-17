@@ -1,0 +1,208 @@
+Lanzada por el proyecto padre  "SamplePipeline" ejecución número 9
+originally caused by:
+ Lanzada por el usuario admin
+Running as SYSTEM
+Ejecutando. en el espacio de trabajo C:\ProgramData\Jenkins\.jenkins\workspace\BuildAppJob
+The recommended git tool is: NONE
+using credential github
+ > git.exe rev-parse --resolve-git-dir C:\ProgramData\Jenkins\.jenkins\workspace\BuildAppJob\.git # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/crlopezr-crypto/sample-app.git # timeout=10
+Fetching upstream changes from https://github.com/crlopezr-crypto/sample-app.git
+ > git.exe --version # timeout=10
+ > git --version # 'git version 2.54.0.windows.1'
+using GIT_ASKPASS to set credentials 
+ > git.exe fetch --tags --force --progress -- https://github.com/crlopezr-crypto/sample-app.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+Checking out Revision c7bfe703e729843e6fe9c7c029db1de8f796eaea (refs/remotes/origin/master)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f c7bfe703e729843e6fe9c7c029db1de8f796eaea # timeout=10
+Commit message: "auto mode code"
+ > git.exe rev-list --no-walk 7064223c8833a1b5dacfab2d205e64144d509798 # timeout=10
+[BuildAppJob] $ cmd /c call C:\WINDOWS\TEMP\jenkins1345117337094564627.bat
+
+C:\ProgramData\Jenkins\.jenkins\workspace\BuildAppJob>C:\Progra~1\Git\bin\bash.exe build.sh 
+samplerunning
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 269B done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.11-slim
+#2 DONE 2.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B 0.0s done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 12.85kB 0.0s done
+#4 DONE 0.0s
+
+#5 [1/5] FROM docker.io/library/python:3.11-slim@sha256:9a7765b36773a37061455b332f18e265e7f58f6fea9c419a550d2a8b0e9db834
+#5 resolve docker.io/library/python:3.11-slim@sha256:9a7765b36773a37061455b332f18e265e7f58f6fea9c419a550d2a8b0e9db834 0.0s done
+#5 DONE 0.0s
+
+#6 [2/5] WORKDIR /app
+#6 CACHED
+
+#7 [3/5] COPY requirements.txt .
+#7 CACHED
+
+#8 [4/5] RUN pip install --no-cache-dir -r requirements.txt
+#8 CACHED
+
+#9 [5/5] COPY app.py .
+#9 DONE 0.1s
+
+#10 exporting to image
+#10 exporting layers 0.1s done
+#10 exporting manifest sha256:7d2b1ecd552b47d3d9d4432b6f84d2c1fb4a1885201f68b026e503de14173313 0.0s done
+#10 exporting config sha256:0295d29f7d0a7d9411f223fb58748bff76bda9235b31459180437849c628a16a 0.0s done
+#10 exporting attestation manifest sha256:3178fc586d3f0a747b0bfa0ed0838e78565e3d6b07c119950659fd18c7c29847 0.1s done
+#10 exporting manifest list sha256:6b8b0fca0c3caefbe0f6b1df67e35e6f1112cd2080148a882df435f4fed3fa07
+#10 exporting manifest list sha256:6b8b0fca0c3caefbe0f6b1df67e35e6f1112cd2080148a882df435f4fed3fa07 0.0s done
+#10 naming to docker.io/library/geoops-intelligence:latest done
+#10 unpacking to docker.io/library/geoops-intelligence:latest 0.0s done
+#10 DONE 0.4s
+==================================================
+  🌍 GeoOps Intelligence — REST Countries API
+  Base URL : https://restcountries.com/v3.1
+  Timeout  : 10s
+  Modo     : Automático (AUTO_MODE=1)
+==================================================
+
+
+🔍 Consultando por nombre: 'Chile'...
+
+==================================================
+País:           Chile
+Nombre oficial: Republic of Chile
+Capital:        Santiago
+Región:         Americas
+Subregión:      South America
+Población:      20,206,953
+Área:           756,102.0 km²
+Idiomas:        Spanish
+Monedas:        Chilean peso ($)
+Bandera:        🇨🇱
+Código ISO:     CL
+==================================================
+
+
+🔍 Consultando por codigo: 'cl'...
+
+==================================================
+País:           Chile
+Nombre oficial: Republic of Chile
+Capital:        Santiago
+Región:         Americas
+Subregión:      South America
+Población:      20,206,953
+Área:           756,102.0 km²
+Idiomas:        Spanish
+Monedas:        Chilean peso ($)
+Bandera:        🇨🇱
+Código ISO:     CL
+==================================================
+
+
+🔍 Consultando por region: 'americas'...
+Se encontraron 56 países en americas:
+  - Montserrat
+  - Anguilla
+  - Guatemala
+  - Mexico
+  - Bolivia
+
+🔍 Consultando por idioma: 'spanish'...
+Se encontraron 24 países que hablan spanish:
+  - Nicaragua
+  - Guatemala
+  - Mexico
+  - Bolivia
+  - Chile
+
+🔍 Consultando por moneda: 'clp'...
+Países que usan CLP:
+  - Chile
+
+✅ Consulta automática finalizada. ¡GeoOps Intelligence ejecutado correctamente!
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 269B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/library/python:3.11-slim
+#2 DONE 0.3s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 2B done
+#3 DONE 0.0s
+
+#4 [internal] load build context
+#4 transferring context: 63B done
+#4 DONE 0.0s
+
+#5 [1/5] FROM docker.io/library/python:3.11-slim@sha256:9a7765b36773a37061455b332f18e265e7f58f6fea9c419a550d2a8b0e9db834
+#5 resolve docker.io/library/python:3.11-slim@sha256:9a7765b36773a37061455b332f18e265e7f58f6fea9c419a550d2a8b0e9db834 0.0s done
+#5 DONE 0.1s
+
+#6 [2/5] WORKDIR /app
+#6 CACHED
+
+#7 [3/5] COPY requirements.txt .
+#7 DONE 0.1s
+
+#8 [4/5] RUN pip install --no-cache-dir -r requirements.txt
+#8 1.109 Collecting requests==2.31.0 (from -r requirements.txt (line 1))
+#8 1.232   Downloading requests-2.31.0-py3-none-any.whl.metadata (4.6 kB)
+#8 1.345 Collecting charset-normalizer<4,>=2 (from requests==2.31.0->-r requirements.txt (line 1))
+#8 1.355   Downloading charset_normalizer-3.4.7-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
+#8 1.368      ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 40.9/40.9 kB 6.3 MB/s eta 0:00:00
+#8 1.385 Collecting idna<4,>=2.5 (from requests==2.31.0->-r requirements.txt (line 1))
+#8 1.393   Downloading idna-3.15-py3-none-any.whl.metadata (7.7 kB)
+#8 1.430 Collecting urllib3<3,>=1.21.1 (from requests==2.31.0->-r requirements.txt (line 1))
+#8 1.441   Downloading urllib3-2.7.0-py3-none-any.whl.metadata (6.9 kB)
+#8 1.466 Collecting certifi>=2017.4.17 (from requests==2.31.0->-r requirements.txt (line 1))
+#8 1.477   Downloading certifi-2026.4.22-py3-none-any.whl.metadata (2.5 kB)
+#8 1.492 Downloading requests-2.31.0-py3-none-any.whl (62 kB)
+#8 1.500    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 62.6/62.6 kB 8.6 MB/s eta 0:00:00
+#8 1.508 Downloading certifi-2026.4.22-py3-none-any.whl (135 kB)
+#8 1.528    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 135.7/135.7 kB 8.4 MB/s eta 0:00:00
+#8 1.536 Downloading charset_normalizer-3.4.7-cp311-cp311-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (214 kB)
+#8 1.548    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 214.1/214.1 kB 18.5 MB/s eta 0:00:00
+#8 1.554 Downloading idna-3.15-py3-none-any.whl (72 kB)
+#8 1.560    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 72.3/72.3 kB 12.8 MB/s eta 0:00:00
+#8 1.566 Downloading urllib3-2.7.0-py3-none-any.whl (131 kB)
+#8 1.578    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 131.1/131.1 kB 11.4 MB/s eta 0:00:00
+#8 1.609 Installing collected packages: urllib3, idna, charset-normalizer, certifi, requests
+#8 1.797 Successfully installed certifi-2026.4.22 charset-normalizer-3.4.7 idna-3.15 requests-2.31.0 urllib3-2.7.0
+#8 1.797 WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+#8 1.854 
+#8 1.854 [notice] A new release of pip is available: 24.0 -> 26.1.1
+#8 1.854 [notice] To update, run: pip install --upgrade pip
+#8 DONE 2.0s
+
+#9 [5/5] COPY app.py .
+#9 DONE 0.1s
+
+#10 exporting to image
+#10 exporting layers
+#10 exporting layers 0.5s done
+#10 exporting manifest sha256:392d99a6efec25e8ec8eadc7bda31f9eb9c10afa00a8a7ce1698e6fabd94d441 0.0s done
+#10 exporting config sha256:33aa073f571c9092c3c7f531bbebec7261835ffd0bbddc84a48a05b1403a23cf 0.0s done
+#10 exporting attestation manifest sha256:c0338076b84d56cd48980e525ae8ade27cd245bd829b5d8ad2f1581ef59ac8a7 0.1s done
+#10 exporting manifest list sha256:c3402ace5dc353b12e6347d4a3030c21d6f596795c3749df60e672b0b2c15842
+#10 exporting manifest list sha256:c3402ace5dc353b12e6347d4a3030c21d6f596795c3749df60e672b0b2c15842 0.0s done
+#10 naming to docker.io/library/geoops-intelligence:latest done
+#10 unpacking to docker.io/library/geoops-intelligence:latest
+#10 unpacking to docker.io/library/geoops-intelligence:latest 0.2s done
+#10 DONE 0.9s
+CONTAINER ID   IMAGE          COMMAND              CREATED         STATUS                     PORTS     NAMES
+5e750c3e760b   6b8b0fca0c3c   "python -u app.py"   7 seconds ago   Exited (0) 4 seconds ago             samplerunning
+
+C:\ProgramData\Jenkins\.jenkins\workspace\BuildAppJob>exit 0 
+Finished: SUCCESS
