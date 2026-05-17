@@ -131,7 +131,7 @@ class RestCountriesAPI:
 
 def main():
     api = RestCountriesAPI()
-
+    auto_mode = os.getenv("AUTO_MODE", "0") == "1"
     print("=" * 50)
     print("  🌍 GeoOps Intelligence — REST Countries API")
     print(f"  Base URL : {api.base_url}")
