@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # -- Crear estructura de directorios --
+rm -rf tempdir
 mkdir tempdir
 
 # -- Copiar archivos de la app --
