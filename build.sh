@@ -2,6 +2,7 @@
 
 # -- Crear estructura de directorios --
 rm -rf tempdir
+docker rm -f samplerunning 2>/dev/null || true
 mkdir tempdir
 
 # -- Copiar archivos de la app --
@@ -22,5 +23,5 @@ echo "CMD [\"python\", \"-u\", \"app.py\"]" >> tempdir/Dockerfile
 # -- Build y Run --
 cd tempdir
 docker build -t geoops-intelligence .
-docker run -it --name samplerunning geoops-intelligence
+docker run --name samplerunning -e AUTO_MODE=1 geoops-intelligence
 docker ps -a
