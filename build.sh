@@ -16,6 +16,7 @@ echo "RUN pip install --no-cache-dir -r requirements.txt" >> tempdir/Dockerfile
 echo "COPY app.py ." >> tempdir/Dockerfile
 echo "ENV BASE_URL=https://restcountries.com/v3.1" >> tempdir/Dockerfile
 echo "ENV TIMEOUT=10" >> tempdir/Dockerfile
+echo "ENV AUTO_MODE=1" >> tempdir/Dockerfile
 echo "CMD [\"python\", \"-u\", \"app.py\"]" >> tempdir/Dockerfile
 
 # -- Build y Run --
