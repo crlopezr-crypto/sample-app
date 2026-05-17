@@ -1,0 +1,65 @@
+CONTAINER ID   IMAGE          COMMAND              CREATED       STATUS                   PORTS     NAMES
+5e750c3e760b   6b8b0fca0c3c   "python -u app.py"   4 hours ago   Exited (0) 4 hours ago             samplerunning
+==================================================
+  🌍 GeoOps Intelligence — REST Countries API
+  Base URL : https://restcountries.com/v3.1
+  Timeout  : 10s
+  Modo     : Automático (AUTO_MODE=1)
+==================================================
+
+
+🔍 Consultando por nombre: 'Chile'...
+
+==================================================
+País:           Chile
+Nombre oficial: Republic of Chile
+Capital:        Santiago
+Región:         Americas
+Subregión:      South America
+Población:      20,206,953
+Área:           756,102.0 km²
+Idiomas:        Spanish
+Monedas:        Chilean peso ($)
+Bandera:        🇨🇱
+Código ISO:     CL
+==================================================
+
+
+🔍 Consultando por codigo: 'cl'...
+
+==================================================
+País:           Chile
+Nombre oficial: Republic of Chile
+Capital:        Santiago
+Región:         Americas
+Subregión:      South America
+Población:      20,206,953
+Área:           756,102.0 km²
+Idiomas:        Spanish
+Monedas:        Chilean peso ($)
+Bandera:        🇨🇱
+Código ISO:     CL
+==================================================
+
+
+🔍 Consultando por region: 'americas'...
+Se encontraron 56 países en americas:
+  - Montserrat
+  - Anguilla
+  - Guatemala
+  - Mexico
+  - Bolivia
+
+🔍 Consultando por idioma: 'spanish'...
+Se encontraron 24 países que hablan spanish:
+  - Nicaragua
+  - Guatemala
+  - Mexico
+  - Bolivia
+  - Chile
+
+🔍 Consultando por moneda: 'clp'...
+Países que usan CLP:
+  - Chile
+
+✅ Consulta automática finalizada. ¡GeoOps Intelligence ejecutado correctamente!
