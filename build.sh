@@ -24,4 +24,5 @@ echo "CMD [\"python\", \"-u\", \"app.py\"]" >> tempdir/Dockerfile
 cd tempdir
 docker build -t geoops-intelligence .
 docker run --name samplerunning -e AUTO_MODE=1 geoops-intelligence
+docker build --no-cache -t geoops-intelligence .
 docker ps -a
