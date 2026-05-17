@@ -131,12 +131,53 @@ class RestCountriesAPI:
 
 def main():
     api = RestCountriesAPI()
+
     auto_mode = os.getenv("AUTO_MODE", "0") == "1"
+
     print("=" * 50)
     print("  🌍 GeoOps Intelligence — REST Countries API")
     print(f"  Base URL : {api.base_url}")
     print(f"  Timeout  : {api.timeout}s")
+    if auto_mode:
+        print("  Modo     : Automático (AUTO_MODE=1)")
     print("=" * 50 + "\n")
+
+    if auto_mode:
+        consultas = [
+            ("nombre",  "Chile"),
+            ("codigo",  "cl"),
+            ("region",  "americas"),
+            ("idioma",  "spanish"),
+            ("moneda",  "clp"),
+        ]
+        for tipo, valor in consultas:
+            print(f"\n🔍 Consultando por {tipo}: \'{valor}\'...")
+            if tipo == "nombre":
+                resultado = api.get_country_by_name(valor)
+                api.print_country_info(resultado)
+            elif tipo == "codigo":
+                resultado = api.get_country_by_code(valor)
+                api.print_country_info(resultado)
+            elif tipo == "region":
+                resultado = api.get_countries_by_region(valor)
+                if resultado:
+                    print(f"Se encontraron {len(resultado)} países en {valor}:")
+                    for c in resultado[:5]:
+                        print(f"  - {c.get('name', {}).get('common', 'N/A')}")
+            elif tipo == "idioma":
+                resultado = api.get_countries_by_language(valor)
+                if resultado:
+                    print(f"Se encontraron {len(resultado)} países que hablan {valor}:")
+                    for c in resultado[:5]:
+                        print(f"  - {c.get('name', {}).get('common', 'N/A')}")
+            elif tipo == "moneda":
+                resultado = api.get_countries_by_currency(valor)
+                if resultado:
+                    print(f"Países que usan {valor.upper()}:")
+                    for c in resultado:
+                        print(f"  - {c.get('name', {}).get('common', 'N/A')}")
+        print("\n✅ Consulta automática finalizada. ¡GeoOps Intelligence ejecutado correctamente!")
+        return
 
     # ── 1. Buscar por nombre ─────────────────────────────────────────────────
     while True:
