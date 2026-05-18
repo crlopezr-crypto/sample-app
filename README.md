@@ -82,10 +82,21 @@ El script genera el Dockerfile, construye la imagen y ejecuta el contenedor auto
 
 #### 2. Ejecución manual paso a paso
 
+Para usar la aplicación de forma interactiva, donde el programa
+solicita inputs al usuario:
+
 ```bash
 docker build -t geoops-intelligence .
-docker run -it --name samplerunning geoops-intelligence
+docker run -it --name samplerunning \
+  -e AUTO_MODE=0 \
+  geoops-intelligence
 ```
+
+Los flags `-it` son obligatorios en modo interactivo:
+- `-i` mantiene abierto el STDIN para recibir input del usuario
+- `-t` asigna una terminal pseudo-TTY para mostrar los prompts correctamente
+
+Sin estos flags, Python lanza `EOFError` al intentar leer el input.
 
 #### 3. Ejecución directa sin Docker
 
