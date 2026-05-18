@@ -80,16 +80,16 @@ bash build.sh
 
 El script genera el Dockerfile, construye la imagen y ejecuta el contenedor automáticamente.
 
-#### 2. Ejecución manual paso a paso
+#### 2. Ejecución interactiva (modo usuario)
 
-Para usar la aplicación de forma interactiva, donde el programa
-solicita inputs al usuario:
+Se requiere que la imagen ya exista. Si no se ha construido aún, ejecute
+`bash build.sh` al menos una vez primero.
+
+Luego elimina el contenedor anterior si existe y corre en modo interactivo:
 
 ```bash
-docker build -t geoops-intelligence .
-docker run -it --name samplerunning \
-  -e AUTO_MODE=0 \
-  geoops-intelligence
+docker rm -f samplerunning 2>/dev/null || true
+docker run -it --name samplerunning -e AUTO_MODE=0 geoops-intelligence
 ```
 
 Los flags `-it` son obligatorios en modo interactivo:
